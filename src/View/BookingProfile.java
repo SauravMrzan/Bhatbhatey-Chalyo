@@ -179,7 +179,7 @@ public class BookingProfile extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Wide Latin", 0, 24)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(51, 0, 0));
         jLabel20.setText("Booking profile");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 510, -1, -1));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, -1, 80));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -74,6 +74,11 @@ public class UserProfile extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        Customerid1 = new javax.swing.JTextField();
+        Customerid2 = new javax.swing.JTextField();
+        Customerid3 = new javax.swing.JTextField();
+        Customerid4 = new javax.swing.JTextField();
+        Customerid5 = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -131,7 +136,7 @@ public class UserProfile extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.lightGray);
         setForeground(new java.awt.Color(204, 204, 204));
-        setPreferredSize(new java.awt.Dimension(950, 711));
+        setPreferredSize(new java.awt.Dimension(950, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(51, 32, 32));
@@ -166,7 +171,7 @@ public class UserProfile extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setText("Gender");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 70, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 70, -1));
 
         Gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
         Gender.addActionListener(new java.awt.event.ActionListener() {
@@ -174,7 +179,7 @@ public class UserProfile extends javax.swing.JFrame {
                 GenderActionPerformed(evt);
             }
         });
-        getContentPane().add(Gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 140, -1));
+        getContentPane().add(Gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 140, -1));
 
         Add.setText("ADD");
         Add.addActionListener(new java.awt.event.ActionListener() {
@@ -221,7 +226,7 @@ public class UserProfile extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Wide Latin", 0, 24)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(51, 0, 0));
         jLabel20.setText("User profile");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 520, -1, -1));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, -1, 50));
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel21.setText("Booking profile");
@@ -252,50 +257,47 @@ public class UserProfile extends javax.swing.JFrame {
                 CustomeridActionPerformed(evt);
             }
         });
-        getContentPane().add(Customerid, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 186, 141, -1));
+        getContentPane().add(Customerid, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 141, -1));
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel32.setText("Customer ID");
-        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 188, -1, 16));
-        getContentPane().add(Contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 273, 153, -1));
+        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 16));
+        getContentPane().add(Contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 140, -1));
 
         jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel33.setText("Address");
-        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 323, 63, -1));
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 63, -1));
 
         Address.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddressActionPerformed(evt);
             }
         });
-        getContentPane().add(Address, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 323, 153, -1));
+        getContentPane().add(Address, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 140, -1));
 
         jLabel34.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel34.setText("License no");
-        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 363, -1, -1));
-        getContentPane().add(Licenseno, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 363, 153, -1));
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
+        getContentPane().add(Licenseno, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 140, -1));
 
         Namee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NameeActionPerformed(evt);
             }
         });
-        getContentPane().add(Namee, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 226, 153, -1));
+        getContentPane().add(Namee, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 140, -1));
 
         jLabel35.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel35.setText("Name");
-        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 226, 60, -1));
+        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 60, -1));
 
         jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel36.setText("Contact");
-        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 273, -1, -1));
+        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Customer ID", "Name", "Contact", "Address", "License no", "Gender"
@@ -304,6 +306,41 @@ public class UserProfile extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 169, 530, 278));
+
+        Customerid1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Customerid1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Customerid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 141, -1));
+
+        Customerid2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Customerid2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Customerid2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 141, -1));
+
+        Customerid3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Customerid3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Customerid3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 141, -1));
+
+        Customerid4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Customerid4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Customerid4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 141, -1));
+
+        Customerid5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Customerid5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Customerid5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 141, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -347,6 +384,26 @@ public class UserProfile extends javax.swing.JFrame {
     private void NameeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NameeActionPerformed
+
+    private void Customerid1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customerid1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Customerid1ActionPerformed
+
+    private void Customerid2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customerid2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Customerid2ActionPerformed
+
+    private void Customerid3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customerid3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Customerid3ActionPerformed
+
+    private void Customerid4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customerid4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Customerid4ActionPerformed
+
+    private void Customerid5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customerid5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Customerid5ActionPerformed
 public javax.swing.JButton getAdd(){
     return Add;
 }
@@ -421,6 +478,11 @@ public javax.swing.JButton getUpdate(){
     private javax.swing.JTextField Address;
     private javax.swing.JTextField Contact;
     private javax.swing.JTextField Customerid;
+    private javax.swing.JTextField Customerid1;
+    private javax.swing.JTextField Customerid2;
+    private javax.swing.JTextField Customerid3;
+    private javax.swing.JTextField Customerid4;
+    private javax.swing.JTextField Customerid5;
     private javax.swing.JButton Delete;
     private javax.swing.JComboBox<String> Gender;
     private javax.swing.JTextField Licenseno;

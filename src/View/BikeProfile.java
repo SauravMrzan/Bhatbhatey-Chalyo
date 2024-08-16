@@ -59,6 +59,7 @@ public class BikeProfile extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(990, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -105,7 +106,7 @@ public class BikeProfile extends javax.swing.JFrame {
         });
         getContentPane().add(Model, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 247, 110, -1));
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Booked" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available" , "Not Available"}));
         Status.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StatusActionPerformed(evt);
@@ -170,7 +171,7 @@ public class BikeProfile extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Wide Latin", 0, 24)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(51, 0, 0));
         jLabel20.setText("Bike profile");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 520, -1, 53));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, 260, 70));
 
         jPanel2.setBackground(new java.awt.Color(51, 32, 32));
 
