@@ -58,15 +58,15 @@ public class BikeProfileController {
         public void actionPerformed(ActionEvent e) {
             // Get the data from the view
             String registrationNo = view.getRegistration().getText();
-            String model = view.getModel().getText();
+            String bikemodel = view.getModel().getText();
             String brand = view.getBrand().getText();
             int year = Integer.parseInt(view.getYear().getText());
             double price = Double.parseDouble(view.getPrice().getText());
             String status = (String) view.getStatus().getSelectedItem();
 
-            // Update the model
+//             Update the model
             model.setRegistrationNo(registrationNo);
-            model.setModel(model);
+            model.setModel(bikemodel);
             model.setBrand(brand);
             model.setYear(year);
             model.setPrice(price);
