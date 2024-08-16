@@ -216,6 +216,11 @@ public class UserProfile extends javax.swing.JFrame {
         Logout.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
         Logout.setForeground(new java.awt.Color(51, 0, 0));
         Logout.setText("LOGOUT");
+        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogoutMouseClicked(evt);
+            }
+        });
         Logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutActionPerformed(evt);
@@ -230,10 +235,20 @@ public class UserProfile extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel21.setText("Booking profile");
+        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel21MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 610, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel22.setText("Bike profile");
+        jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel22MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(809, 569, -1, -1));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -404,6 +419,27 @@ public class UserProfile extends javax.swing.JFrame {
     private void Customerid5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customerid5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Customerid5ActionPerformed
+
+    private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
+        // TODO add your handling code here:
+        BikeProfile bp = new BikeProfile();
+        bp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel22MouseClicked
+
+    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
+        // TODO add your handling code here:
+        BookingProfile bp = new BookingProfile();
+        bp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel21MouseClicked
+
+    private void LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutMouseClicked
+        // TODO add your handling code here:
+        Register r = new Register();
+        r.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LogoutMouseClicked
 public javax.swing.JButton getAdd(){
     return Add;
 }

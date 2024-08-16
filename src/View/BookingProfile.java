@@ -54,6 +54,7 @@ public class BookingProfile extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel22 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1000, 700));
@@ -139,6 +140,11 @@ public class BookingProfile extends javax.swing.JFrame {
         Logout.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
         Logout.setForeground(new java.awt.Color(51, 0, 0));
         Logout.setText("LOGOUT");
+        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogoutMouseClicked(evt);
+            }
+        });
         Logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutActionPerformed(evt);
@@ -195,11 +201,24 @@ public class BookingProfile extends javax.swing.JFrame {
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel22.setText("Bike profile");
+        jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel22MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 553, -1, 33));
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel24.setText("User profile");
+        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel24MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(868, 592, -1, -1));
+
+        jButton1.setText("Book Now!");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 590, 110, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -235,6 +254,28 @@ public class BookingProfile extends javax.swing.JFrame {
     private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LogoutActionPerformed
+
+    private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
+        // TODO add your handling code here:
+        BikeProfile bk = new BikeProfile();
+        bk.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel22MouseClicked
+
+    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
+        // TODO add your handling code here:
+        UserProfile up = new UserProfile();
+        up.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_jLabel24MouseClicked
+
+    private void LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutMouseClicked
+        // TODO add your handling code here:
+        Register r = new Register();
+        r.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LogoutMouseClicked
 public javax.swing.JButton getAdd(){
     return Add;
 }
@@ -312,6 +353,7 @@ public javax.swing.JButton getUpdate(){
     private javax.swing.JButton Refresh;
     private javax.swing.JTextField Registrationid;
     private javax.swing.JButton Update;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
