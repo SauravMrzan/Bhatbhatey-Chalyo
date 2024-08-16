@@ -4,8 +4,8 @@
  */
 package bhatbhatey;
 
-import bhatbhatey.View.Newlogin;
-import bhatbhatey.View.Register;
+import View.Newlogin;
+import View.Register;
 
 
 /**
