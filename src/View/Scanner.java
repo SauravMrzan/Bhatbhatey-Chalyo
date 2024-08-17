@@ -64,7 +64,7 @@ public class Scanner extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/QR Example Umlauts Accented_1.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Scan here", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Viner Hand ITC", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 390, 250));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 280, 350));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Viner Hand ITC", 1, 12)); // NOI18N
