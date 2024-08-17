@@ -1,7 +1,6 @@
 package View;
 
 import Controller.BookingProfileController;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -220,6 +219,11 @@ public class BookingProfile extends javax.swing.JFrame {
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(868, 592, -1, -1));
 
         jButton1.setText("Book Now!");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 590, 110, -1));
 
         pack();
@@ -278,6 +282,13 @@ public class BookingProfile extends javax.swing.JFrame {
         r.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LogoutMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        Scanner qr= new Scanner();
+        qr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1MouseClicked
 public javax.swing.JButton getAdd(){
     return Add;
 }
