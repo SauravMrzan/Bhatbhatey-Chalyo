@@ -51,6 +51,11 @@ public class BikeProfileController {
                 DltbtnMouseClicked(evt);
             }
         });
+        b.getRefresh().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loadTableData();
+            }
+        });
     }
 
     private void loadTableData() {
@@ -71,7 +76,7 @@ public class BikeProfileController {
 // Method to fetch data from the database, replace it with your actual implementation
     private List<Object[]> fetchDataFromDatabase() {
         List<Object[]> data = new ArrayList<>();
-        try (PreparedStatement ps = bikedao.getConnection().prepareStatement("SELECT * FROM bikedetials")) {
+        try (PreparedStatement ps = bikedao.getConnection().prepareStatement("SELECT * FROM bikedetails")) {
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     Object[] row = new Object[] {

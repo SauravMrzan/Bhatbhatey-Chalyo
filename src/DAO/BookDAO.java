@@ -193,7 +193,7 @@ public String getCustomerIDByBookID(String bookID) throws SQLException {
 
 public double getPriceByRegistration(String register) throws SQLException {
     
-        String sql = "SELECT Price FROM bikedetials WHERE RegistrationNo = ?";
+        String sql = "SELECT Price FROM bikedetails WHERE RegistrationNo = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, register);
             try (ResultSet rs = pstmt.executeQuery()) {

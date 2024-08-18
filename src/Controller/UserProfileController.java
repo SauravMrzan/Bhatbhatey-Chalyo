@@ -43,6 +43,11 @@ public class UserProfileController {
                 DltbtnMouseClicked(evt);
             }
         });
+        up.getRefresh().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loadTableData();
+            }
+        });
     }
 
     private void loadTableData() {

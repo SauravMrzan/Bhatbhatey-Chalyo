@@ -44,6 +44,12 @@ public class BookingProfileController {
         
         b.getAddbtn().addActionListener(new AddButtonListener());
         b.getUpbtn().addActionListener(new UpbtnListener());
+                
+        b.getRefresh().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loadTableData();
+            }
+        });
         b.getDltbtn().addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DltbtnMouseClicked(evt);

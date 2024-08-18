@@ -21,7 +21,7 @@ public class BikeDAO {
     }
 
     public void addBike(BikeProfileModel u) throws SQLException {
-        String sql = "INSERT INTO bikedetials (RegistrationNo, Model, Brand, Year, Price, Status) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO bikedetails (RegistrationNo, Model, Brand, Year, Price, Status) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, u.getRegister());
             pstmt.setString(2, u.getModel());
@@ -34,8 +34,8 @@ public class BikeDAO {
     }
 
  public void updateBike(BikeProfileModel u) throws SQLException {
-    String sqlSelect = "SELECT Model, Brand,  Year,Price, Status FROM bikedetials WHERE RegistrationNo=?";
-    String sqlUpdate = "UPDATE bikedetials SET Model=?, Brand=?,  Year=?,Price=?, Status=? WHERE RegistrationNo=?";
+    String sqlSelect = "SELECT Model, Brand,  Year,Price, Status FROM bikedetails WHERE RegistrationNo=?";
+    String sqlUpdate = "UPDATE bikedetails SET Model=?, Brand=?,  Year=?,Price=?, Status=? WHERE RegistrationNo=?";
     String register= u.getRegister();
     String model = u.getModel();
     String brand = u.getBrand();
@@ -85,7 +85,7 @@ public class BikeDAO {
 }
 
     public void deleteUser(String register) throws SQLException {
-        String sql = "DELETE FROM bikedetials WHERE RegistrationNo=?";
+        String sql = "DELETE FROM bikedetails WHERE RegistrationNo=?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, register);
             pstmt.executeUpdate();
@@ -96,7 +96,7 @@ public class BikeDAO {
 
    public boolean userExists(String registration) throws SQLException {
     // Query the database to check if the user with the given ID exists
-    try (PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bikedetials WHERE RegistrationNo = ?")) {
+    try (PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bikedetails WHERE RegistrationNo = ?")) {
         pstmt.setString(1, registration);
         try (ResultSet rs = pstmt.executeQuery()) {
             return rs.next(); // Return true if a user with the given ID exists, false otherwise
