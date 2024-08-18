@@ -1,83 +1,46 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Model;
-
-import java.util.Date;
 
 /**
  *
- * @author Aum
+ * @author Acer
  */
 public class BikeProfileModel {
-    private String registrationNo;
-    private String model;
-    private String brand;
-    private int year;
-    private double price;
-    private String status;
-    private Date bookingDate;
-
-    public BikeProfileModel(String registrationNo, String model, String brand, int year, double price, String status, Date bookingDate) {
-        this.registrationNo = registrationNo;
+    private final String registration;
+    private final String model;
+    private final String brand;
+    private final String year;
+    private final String price;
+    private final String status;
+    
+    public BikeProfileModel(String registration, String model,  String brand, String year,String price, String status) {
+        this.registration = registration;
         this.model = model;
         this.brand = brand;
-        this.year = year;
-        this.price = price;
-        this.status = status;
-        this.bookingDate = bookingDate;
+        this.year= year;
+        this.price  = price;
+        this.status= status;
     }
-
-    public String getRegistrationNo() {
-        return registrationNo;
+    public String getRegister(){
+        return registration;
     }
-
-    public void setRegistrationNo(String registrationNo) {
-        this.registrationNo = registrationNo;
-    }
-
-    public String getModel() {
+    public String getModel(){
         return model;
     }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getBrand() {
+    public String getBrand(){
         return brand;
     }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public int getYear() {
+    public String getYear(){
         return year;
     }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public double getPrice() {
+    public String getPrice(){
         return price;
     }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getStatus() {
+    public String getStatus(){
         return status;
     }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Date getBookingDate() {
-        return bookingDate;
-    }
-
-    public void setBookingDate(Date bookingDate) {
-        this.bookingDate = bookingDate;
-    }
+    
 }

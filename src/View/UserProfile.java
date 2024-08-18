@@ -1,5 +1,10 @@
 package View;
 
+import Controller.UserProfileController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -16,6 +21,7 @@ public class UserProfile extends javax.swing.JFrame {
      */
     public UserProfile() {
         initComponents();
+        new UserProfileController(this);
         
     }
 
@@ -435,12 +441,16 @@ public class UserProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel21MouseClicked
 
     private void LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutMouseClicked
-        // TODO add your handling code here:
-        Register r = new Register();
-        r.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            Register r = new Register();
+            r.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_LogoutMouseClicked
-public javax.swing.JButton getAdd(){
+public javax.swing.JButton getAddButton(){
     return Add;
 }
 public javax.swing.JTextField getAddress(){
@@ -449,29 +459,32 @@ public javax.swing.JTextField getAddress(){
 public javax.swing.JTextField getContact(){
     return Contact;
 }
-public javax.swing.JTextField getCustomerid(){
+public javax.swing.JTextField getID(){
     return Customerid;
 }
-public javax.swing.JButton getDelete(){
+public javax.swing.JButton getDltbtn(){
     return Delete;
 }
 public javax.swing.JComboBox<String> getGender(){
     return Gender;
 }
-public javax.swing.JTextField getLicenseno(){
+public javax.swing.JTextField getLicenseNumber(){
     return Licenseno;
 }
 public javax.swing.JButton getLogout(){
     return Logout;
 }
-public javax.swing.JTextField getNamee(){
+public javax.swing.JTextField getNamebox(){
     return Namee;
 }
 public javax.swing.JButton getRefresh(){
     return Refresh;
 }
-public javax.swing.JButton getUpdate(){
+public javax.swing.JButton getUpbtn(){
     return Update;
+}
+public javax.swing.JTable getUPTable(){;
+    return jTable1;
 }
     /**
      * @param args the command line arguments

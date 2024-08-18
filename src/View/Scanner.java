@@ -4,6 +4,10 @@
  */
 package View;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author sthas
@@ -116,17 +120,25 @@ public class Scanner extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-        Register r = new Register();
-        r.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            Register r = new Register();
+            r.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(Scanner.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here:
-        Register r = new Register();
-        r.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            Register r = new Register();
+            r.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(Scanner.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**

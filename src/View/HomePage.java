@@ -5,6 +5,9 @@ import View.BikeProfile;
 import View.BookingProfile;
 import View.Register;
 import View.UserProfile;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -143,7 +146,7 @@ public class HomePage extends javax.swing.JFrame {
         jLabel1.setText("Choose between these :");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 380, 30));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/959849-sport-bikes-wallpapers-1920x1200-images.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\37125\\Desktop\\Bhatbhatey Retry\\Again\\src\\Images\\959849-sport-bikes-wallpapers-1920x1200-images.jpg")); // NOI18N
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 920, 570));
 
@@ -188,10 +191,14 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        // TODO add your handling code here:
-        Register r = new Register();
-        r.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            Register r = new Register();
+            r.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton6MouseClicked
 
     /**

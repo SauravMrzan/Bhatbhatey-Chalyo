@@ -150,7 +150,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/WhatsApp Image 2024-07-05 at 21.42.43_4cd71f42.jpg"/>
+                      <Image iconType="2" name="C:\Users\37125\Desktop\Bhatbhatey Retry\Again\src\Images\WhatsApp Image 2024-07-05 at 21.42.43_4cd71f42.jpg"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -371,6 +371,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="SIGN UP&#xa;"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignupActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>

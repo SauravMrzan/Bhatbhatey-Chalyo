@@ -1,5 +1,10 @@
 package View;
 
+import Controller.BikeProfileController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 
 /*
@@ -18,6 +23,7 @@ public class BikeProfile extends javax.swing.JFrame {
      */
     public BikeProfile() {
         initComponents();
+        new BikeProfileController(this);
          
     }
 
@@ -272,10 +278,14 @@ public class BikeProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_LogoutActionPerformed
 
     private void LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutMouseClicked
-        // TODO add your handling code here:
-        Register r = new Register();
-        r.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            Register r = new Register();
+            r.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(BikeProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_LogoutMouseClicked
 
     private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
@@ -291,13 +301,13 @@ public class BikeProfile extends javax.swing.JFrame {
         bp.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel21MouseClicked
-public javax.swing.JButton getAdd(){
+public javax.swing.JButton getAddbtn(){
     return Add;
 }
 public javax.swing.JTextField getBrand(){
     return Brand;
 }
-public javax.swing.JButton getDelete(){
+public javax.swing.JButton getDltbtn(){
     return Delete;
 }
 public javax.swing.JButton getLogout(){
@@ -312,17 +322,20 @@ public javax.swing.JTextField getPrice(){
 public javax.swing.JButton getRefresh(){
     return Refresh;
 }
-public javax.swing.JTextField getRegistration(){
+public javax.swing.JTextField getRegister(){
     return Registration;
 }
 public javax.swing.JComboBox<String> getStatus(){
     return Status;
 }
-public javax.swing.JButton getUpdate(){
+public javax.swing.JButton getUpbtn(){
     return Update;
 }
 public javax.swing.JTextField getYear(){
     return Year;
+}
+public javax.swing.JTable getBikeTable(){
+    return jTable1;
 }
  
     

@@ -86,6 +86,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PickupdateActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="createFormattedTextField(&quot;##/##/####&quot;)"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="166" y="341" width="144" height="-1"/>
@@ -106,6 +109,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="Dropoffdate">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="createFormattedTextField(&quot;##/##/####&quot;)"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="166" y="381" width="144" height="-1"/>
@@ -305,24 +311,18 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="7" rowCount="0">
+              <Table columnCount="6" rowCount="0">
                 <Column editable="true" title="BookID" type="java.lang.Object"/>
                 <Column editable="true" title="Registration ID" type="java.lang.Object"/>
                 <Column editable="true" title="Customer ID" type="java.lang.Object"/>
                 <Column editable="true" title="Pickup date" type="java.lang.Object"/>
                 <Column editable="true" title="Drop off date" type="java.lang.Object"/>
-                <Column editable="true" title="Name" type="java.lang.Object"/>
                 <Column editable="true" title="Price" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
                   <Renderer/>

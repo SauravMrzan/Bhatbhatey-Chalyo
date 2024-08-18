@@ -1,40 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
 
-/**
- *
- * @author Saurav
- */
 public class RegisterModel {
-    private String username;
-    private String email;
-    private String password;
-    private String phone;
-    private String NID;
-    
-    public RegisterModel(String username,String email,String password,String phone,String NID){
-        this.username=username;
-        this.email=email;
-        this.password=password;
-        this.phone=phone;
-        this.NID=NID;
+    private final String username;
+    private final String password;
+    private final String contact;
+    private  String email;
+    private final String gender;
+    private final String NID;
+
+    public RegisterModel(String username, String password, String contact, String email, String gender, String NID) {
+        this.username = username;
+        this.password = password;
+        this.contact = contact;
+        this.email = email;
+        this.gender = gender;
+        this.NID = NID;
     }
-    public String getUserName(){
+
+    public String getUsername() {
         return username;
     }
-    public String getEmail(){
-        return email;
-    }
-    public String getPassword(){
+
+    public String getPassword() {
         return password;
     }
-    public String getPhone(){
-        return phone;
+
+    public String getContact() {
+        return contact;
     }
-    public String getNID(){
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getNID() {
         return NID;
     }
 }

@@ -4,18 +4,23 @@
  */
 package View;
 import Controller.Registercontroller;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author sthas
  */
 public class Register extends javax.swing.JFrame {
+    private Registercontroller registerController;
 
     /**
      * Creates new form Register
      */
-    public Register() {
+    public Register() throws SQLException{
         initComponents();
-        new Registercontroller(this);
+       registerController= new Registercontroller(this);
     }
     
 
@@ -65,7 +70,7 @@ public class Register extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(236, 237, 235));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/WhatsApp Image 2024-07-05 at 21.42.43_4cd71f42.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\37125\\Desktop\\Bhatbhatey Retry\\Again\\src\\Images\\WhatsApp Image 2024-07-05 at 21.42.43_4cd71f42.jpg")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -111,6 +116,11 @@ public class Register extends javax.swing.JFrame {
         Signup.setBackground(new java.awt.Color(236, 237, 235));
         Signup.setFont(new java.awt.Font("Segoe Print", 1, 13)); // NOI18N
         Signup.setText("SIGN UP\n");
+        Signup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignupActionPerformed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Segoe Print", 2, 10)); // NOI18N
         jLabel9.setText("Already have an account ?");
@@ -304,6 +314,69 @@ public class Register extends javax.swing.JFrame {
         nl.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LoginMouseClicked
+
+    private void SignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignupActionPerformed
+        // TODO add your handling code here:
+    String userName = Username.getText();
+        String password = new String(Password.getPassword());
+        String contact = Phone.getText();
+        String email = Email.getText();
+        String gender = (String) Gender.getSelectedItem();
+        String citizenshipID = NID.getText();
+
+        if (userName.isEmpty() || password.isEmpty() || contact.isEmpty() || email.isEmpty() ||
+            gender.isEmpty() || citizenshipID.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill all fields", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+                  if (!email.endsWith("@gmail.com")) {
+        JOptionPane.showMessageDialog(this, "Please enter a valid Gmail address \"@gmail.com\".", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Check if password length is at least 8 characters
+    if (password.length() < 8) {
+        JOptionPane.showMessageDialog(this, "Password must be at least 8 characters long.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Check if contact number has 10 digits
+    if (contact.length() != 10 || !contact.matches("\\d+")) {
+        JOptionPane.showMessageDialog(this, "Please enter a valid 10-digit contact number.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+ }   
+        if (registerController.isUsernameTaken(userName)) {
+            JOptionPane.showMessageDialog(this, "Username already taken", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (registerController.isEmailTaken(email)) {
+            JOptionPane.showMessageDialog(this, "Email already taken", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (registerController.isContactTaken(contact)) {
+            JOptionPane.showMessageDialog(this, "Contact already taken", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (registerController.isCitizenshipIdTaken(citizenshipID)) {
+            JOptionPane.showMessageDialog(this, "CitizenShipID already taken", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (!email.endsWith("@gmail.com")) {
+        JOptionPane.showMessageDialog(this, "Please enter a valid Gmail address \"@gmail.com\".", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+        if (registerController.registerAdmin(userName, password, contact, email, gender, citizenshipID)) {
+            JOptionPane.showMessageDialog(this, "Welcome Administrator!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            Newlogin login = new Newlogin();
+            login.setLocationRelativeTo(null);
+            login.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Error registering user", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+    
+    }//GEN-LAST:event_SignupActionPerformed
 public javax.swing.JTextField getEmail(){
     return Email;
 }
@@ -362,8 +435,13 @@ public javax.swing.JComboBox<String> getGender(){
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new Register().setVisible(true);
+                try {
+                    new Register().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

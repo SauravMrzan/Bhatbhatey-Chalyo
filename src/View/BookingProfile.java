@@ -1,6 +1,12 @@
 package View;
 
 import Controller.BookingProfileController;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFormattedTextField;
+import javax.swing.text.MaskFormatter;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -17,6 +23,7 @@ public class BookingProfile extends javax.swing.JFrame {
      */
     public BookingProfile() {
         initComponents();
+        new BookingProfileController(this);
     }
 
     /**
@@ -34,9 +41,9 @@ public class BookingProfile extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         Customerid = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        Pickupdate = new javax.swing.JTextField();
+        Pickupdate = createFormattedTextField("##/##/####");
         jLabel34 = new javax.swing.JLabel();
-        Dropoffdate = new javax.swing.JTextField();
+        Dropoffdate = createFormattedTextField("##/##/####");
         Registrationid = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         Add = new javax.swing.JButton();
@@ -190,7 +197,7 @@ public class BookingProfile extends javax.swing.JFrame {
 
             },
             new String [] {
-                "BookID", "Registration ID", "Customer ID", "Pickup date", "Drop off date", "Name", "Price"
+                "BookID", "Registration ID", "Customer ID", "Pickup date", "Drop off date", "Price"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -277,10 +284,14 @@ public class BookingProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel24MouseClicked
 
     private void LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutMouseClicked
-        // TODO add your handling code here:
-        Register r = new Register();
-        r.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            Register r = new Register();
+            r.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(BookingProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_LogoutMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -289,35 +300,49 @@ public class BookingProfile extends javax.swing.JFrame {
         qr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
-public javax.swing.JButton getAdd(){
+ private JFormattedTextField createFormattedTextField(String format) {
+        JFormattedTextField formattedTextField = null;
+        try {
+            MaskFormatter maskFormatter = new MaskFormatter(format);
+            maskFormatter.setPlaceholderCharacter('_');
+            formattedTextField = new JFormattedTextField(maskFormatter);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return formattedTextField;
+    }
+    public javax.swing.JButton getAddbtn(){
     return Add;
 }
-public javax.swing.JTextField getBookid(){
+public javax.swing.JTextField getBookID(){
     return Bookid;
 }
-public javax.swing.JTextField getCustomerid(){
+public javax.swing.JTextField getIDbox(){
     return Customerid;
 }
-public javax.swing.JButton getDelete(){
+public javax.swing.JButton getDltbtn(){
     return Delete;
 }
-public javax.swing.JTextField getDropoffdate(){
+public javax.swing.JTextField getDropDate(){
     return Dropoffdate;
 }
 public javax.swing.JButton getLogout(){
     return Logout;
 }
-public javax.swing.JTextField getPickupdate(){
+public javax.swing.JTextField getPickDate(){
     return Pickupdate;
 }
 public javax.swing.JButton getRefresh(){
     return Refresh;
 }
-public javax.swing.JTextField getRegistrationid(){
+public javax.swing.JTextField getRegBox(){
     return Registrationid;
 }
-public javax.swing.JButton getUpdate(){
+public javax.swing.JButton getUpbtn(){
     return Update;
+}
+public javax.swing.JTable getBookTable(){ 
+    return jTable1;
 }
     /**
      * @param args the command line arguments

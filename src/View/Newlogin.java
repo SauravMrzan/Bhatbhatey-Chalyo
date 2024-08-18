@@ -4,6 +4,9 @@
  */
 package View;
 import Controller.Logincontroller;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -61,7 +64,7 @@ public class Newlogin extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/WhatsApp Image 2024-07-05 at 21.42.43_4cd71f42.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\37125\\Desktop\\Bhatbhatey Retry\\Again\\src\\Images\\WhatsApp Image 2024-07-05 at 21.42.43_4cd71f42.jpg")); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(236, 237, 235));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LOG IN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe Print", 1, 12))); // NOI18N
@@ -211,18 +214,22 @@ public class Newlogin extends javax.swing.JFrame {
     }//GEN-LAST:event_checkboxActionPerformed
 
     private void SignupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignupMouseClicked
-        // TODO add your handling code here:
-        Register r = new Register();
-        r.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            Register r = new Register();
+            r.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(Newlogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_SignupMouseClicked
 public javax.swing.JTextField getEmail(){
     return Email;
 }
-public javax.swing.JPasswordField getPassword(){
+public javax.swing.JPasswordField getpassword(){
     return Password;
 }
-public javax.swing.JButton getLogin(){
+public javax.swing.JButton getLoginButton(){
     return Login;
 }
 public javax.swing.JCheckBox getCheckbox(){

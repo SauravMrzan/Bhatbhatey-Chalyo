@@ -1,57 +1,83 @@
 package Controller;
 
+import DAO.AdminDAO;
 import Model.RegisterModel;
 import View.Register;
+import View.Newlogin;  // Import the Login class
+import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Registercontroller {
-    private Register view;
-    private RegisterModel model;
+
+    private final Register view;
+    private final AdminDAO adminDao;
 
     public Registercontroller(Register view) {
         this.view = view;
-        this.model = null;
+        this.adminDao = new AdminDAO();
+        
+    }
+ 
+    public void jLabel12MouseClicked(MouseEvent evt) {
+        // Dispose the signup view
+        view.dispose();
 
-        view.getSignup().addActionListener(e -> signUp());
-        view.getLogin().addActionListener(e -> logIn());
-        view.getckbox().addActionListener(e -> showPassword());
+        // Show the login view
+        Newlogin loginView = new Newlogin();
+        loginView.setVisible(true);
     }
 
-    public void setModel(RegisterModel model) {
-        this.model = model;
-    }
-
-    private void signUp() {
-        String username = view.getUsername().getText();
-        String email = view.getEmail().getText();
-        String password = String.valueOf(view.getPassword().getPassword());
-        String phone = view.getPhone().getText();
-        String NID = view.getNID().getText();
-        String Gender = (String) view.getGender().getSelectedItem();
-
-        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || phone.isEmpty() || NID.isEmpty()) {
-            JOptionPane.showMessageDialog(view, "Please fill in all the fields.", "Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            model = new RegisterModel(username, email, password, phone, NID);
-            saveUserData(model);
+    public boolean isUsernameTaken(String userName) {
+        try {
+            // Perform a database query to check if the username exists
+            return adminDao.isUsernameTaken(userName);
+        } catch (SQLException e) {
+            // Handle any SQL exceptions
+            JOptionPane.showMessageDialog(view, "An error occurred while checking username availability: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return true; // Assuming the username is taken to prevent further issues
         }
     }
-
-    private void saveUserData(RegisterModel model) {
-        // Implement the logic to save the user data to the database
-        System.out.println("User data saved successfully: " + model.getUserName());
+ public boolean isEmailTaken(String email) {
+        try {
+            // Perform a database query to check if the username exists
+            return adminDao.isEmailTaken(email);
+        } catch (SQLException e) {
+            // Handle any SQL exceptions
+            JOptionPane.showMessageDialog(view, "An error occurred while checking username availability: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return true; // Assuming the username is taken to prevent further issues
+        }
     }
-
-    private void logIn() {
-        // Implement the logic to log in the user
-        System.out.println("Log in button clicked.");
+  public boolean isContactTaken(String contact) {
+        try {
+            // Perform a database query to check if the username exists
+            return adminDao.isContactTaken(contact);
+        } catch (SQLException e) {
+            // Handle any SQL exceptions
+            JOptionPane.showMessageDialog(view, "An error occurred while checking username availability: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return true; // Assuming the username is taken to prevent further issues
+        }
     }
-
-    private void showPassword() {
-        if (view.getckbox().isSelected()) {
-            view.getPassword().setEchoChar((char) 0);
-        } else {
-            view.getPassword().setEchoChar('*');
+   public boolean isCitizenshipIdTaken(String citizenshipId) {
+        try {
+            // Perform a database query to check if the username exists
+            return adminDao.isCitizenshipIdTaken(citizenshipId);
+        } catch (SQLException e) {
+            // Handle any SQL exceptions
+            JOptionPane.showMessageDialog(view, "An error occurred while checking username availability: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return true; // Assuming the username is taken to prevent further issues
+        }
+    }
+    public boolean registerAdmin(String userName, String password, String contact, String email, String gender, String citizenshipID) {
+        try {
+            // Create an Admin object with the provided details
+            RegisterModel admin = new RegisterModel(userName, password, contact, email, gender, citizenshipID);
+            // Register the admin using the AdminDAO
+            return adminDao.registerAdmin(admin);
+        } catch (SQLException e) {
+            // Handle any SQL exceptions
+            JOptionPane.showMessageDialog(view, "An error occurred while registering user: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
         }
     }
 }

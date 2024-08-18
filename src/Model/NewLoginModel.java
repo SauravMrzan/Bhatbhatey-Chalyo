@@ -4,22 +4,23 @@
  */
 package Model;
 
+
 /**
  *
- * @author Saurav
+ * @author Acer
  */
+
 public class NewLoginModel {
-    private String email;
-    private String password;
-    
-    public NewLoginModel(String email,String password){
-        this.email=email;
-        this.password=password;   
-    }
-    public String getEmail(){
+    private final String email;
+    private final String pass;
+  
+    public  NewLoginModel(String email, String pass){
+        this.email = email;
+        this. pass= pass;}
+          public String getEmail() {
         return email;
     }
-    public String getPassword(){
-        return password;
+       public String getpassword() {
+        return pass;
     }
-}
+    }
