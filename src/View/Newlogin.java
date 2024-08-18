@@ -88,6 +88,11 @@ public class Newlogin extends javax.swing.JFrame {
 
         Login.setFont(new java.awt.Font("Segoe Print", 1, 12)); // NOI18N
         Login.setText("LOG IN");
+        Login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LoginMouseClicked(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe Print", 0, 11)); // NOI18N
         jLabel5.setText("Don't have an account ?");
@@ -223,6 +228,13 @@ public class Newlogin extends javax.swing.JFrame {
             Logger.getLogger(Newlogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_SignupMouseClicked
+
+    private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
+        // TODO add your handling code here:
+        HomePage hp = new HomePage();
+        hp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LoginMouseClicked
 public javax.swing.JTextField getEmail(){
     return Email;
 }

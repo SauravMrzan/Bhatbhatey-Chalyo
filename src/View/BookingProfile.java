@@ -197,7 +197,7 @@ public class BookingProfile extends javax.swing.JFrame {
 
             },
             new String [] {
-                "BookID", "Registration ID", "Customer ID", "Pickup date", "Drop off date", "Price"
+                "BookID", "Registration ID", "Customer ID", "Name", "Pickup date", "Drop off date", "Price"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
