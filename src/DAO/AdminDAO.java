@@ -70,6 +70,7 @@ public boolean isContactTaken(String contact) throws SQLException {
                 int count = rs.getInt("count");
                 return count > 0;
             }
+            // commit comment
         }
     }
     return false;
